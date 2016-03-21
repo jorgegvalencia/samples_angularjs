@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 
         concat: {
             options: {
-                separator: ';',
+                separator: '\n;',
                 process: false,
                 stripBanners: {
                     block: true
@@ -14,6 +14,7 @@ module.exports = function (grunt) {
             app: {
                 src: [
                     'bower_components/angular/angular.js',
+                    'bower_components/angular-route/angular-route.js',
                     'scripts/**/*.js',
                     'scripts/*.js'
                 ],
