@@ -1,0 +1,26 @@
+{
+  "name": "samples_angularjs",
+  "version": "1.0.0",
+  "description": "AngularJS examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jorgegvalencia@github.com/jorgegvalencia/samples_angularjs.git"
+  },
+  "author": "jorgegvalencia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgegvalencia/samples_angularjs/issues"
+  },
+  "homepage": "https://github.com/jorgegvalencia/samples_angularjs#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
