@@ -1,0 +1,16 @@
+{
+  "name": "samples_angularjs",
+  "homepage": "https://github.com/jorgegvalencia/samples_angularjs",
+  "authors": [
+    "jorgegvalencia"
+  ],
+  "description": "AngularJS examples",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.2",
+    "bootstrap": "^3.3.6"
+  }
+}
