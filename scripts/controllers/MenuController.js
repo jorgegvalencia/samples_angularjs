@@ -1,10 +1,10 @@
-angular.module("moviedb").controller("MenuController", ["$scope", function($scope) {
-
+angular.module("moviedb").controller("MenuController", ["$scope", "$location", function($scope, $location) {
     // inicializar el scope
     // atributo con nombre model
     $scope.model = {
         selectedItem: "movies"
     };
+
     // metodos del scope
     $scope.setSelectedItem = function(item) {
         $scope.model.selectedItem = item;
@@ -18,8 +18,8 @@ angular.module("moviedb").controller("MenuController", ["$scope", function($scop
         }
     }
 
-    // watchers del scope
-    $scope.$watch("model.selectedItem", function(newValue, oldValue) {
-        $scope.$emit("OnMenuChange", newValue);
+    // scope event listeners
+    $scope.$on("$locationChangeSuccess", function(evt, currentRoute) {
+        $scope.model.selectedItem = $location.path();
     });
 }]);

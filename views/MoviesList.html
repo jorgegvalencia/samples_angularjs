@@ -1,1 +1,40 @@
-<h1>Movies</h1>
+<div ng-controller="MoviesListController">
+    <h1>Movies</h1>
+    <div class="jumbotron" ng-show="uiState=='blank'">
+        <p class="lead">No data here</p>
+    </div>
+    <div class="alert alert-danger" ng-show="uiState=='error'">
+        Error while loading data
+    </div>
+    <div class="progress" ng-show="uiState=='loading'">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+            <span class="sr-only">45% Complete</span>
+        </div>
+    </div>
+    <table class="table table-striped" ng-show="uiState=='ideal'">
+        <thead>
+            <tr>
+                <th>Poster</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in model">
+                <td>
+                    <img ng-src="{{::item.poster_url }}" alt="{{::item.title }} poster" title="{{::item.title }}" width="70">
+                </td>
+                <td>
+                    {{::item.title }}
+                </td>
+                <td>
+                    {{::item.release_date }}
+                </td>
+                <td>
+                    {{::item.rating }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
