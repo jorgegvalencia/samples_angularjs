@@ -1,12 +1,11 @@
-angular.module("moviedb").controller("AppController", ["$scope", "$location", function($scope, $location) {
+angular.module("moviedb").controller("AppController", ["$scope", "$location", "paths", function($scope, $location, paths) {
 	var controller = this;
 
 	// controller properties
-	this.titles = {
-		"/movies": "Movies List",
-		"/series": "Series List",
-		"/people": "People List"
-	}
+	controller.titles = {};
+	controller.titles[paths.movies] = "Movies List";
+	controller.titles[paths.series] = "Series List";
+	controller.titles[paths.people] = "People List";	
 
     // model init
     $scope.model = { // es buena practica tener un objeto para el modelo

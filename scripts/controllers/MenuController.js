@@ -1,9 +1,10 @@
-angular.module("moviedb").controller("MenuController", ["$scope", "$location", function($scope, $location) {
+angular.module("moviedb").controller("MenuController", ["$scope", "$location", "paths", function($scope, $location, paths) {
     // inicializar el scope
     // atributo con nombre model
     $scope.model = {
-        selectedItem: "movies"
+        selectedItem: paths.movies
     };
+    $scope.paths = paths;
 
     // metodos del scope
     $scope.setSelectedItem = function(item) {
