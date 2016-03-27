@@ -1,7 +1,33 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        ngAnnotate: {
+            options: {
+                singleQuotes: true,
+            },
+            app: {
+                files: [{
+                    expand: true,
+                    src: ['scripts/**/*.js']
+                }]
+            }
+        },
+
+        'string-replace': {
+            dist: {
+                options: {
+                    replacements: [{
+                        pattern: /["']ngInject["'];*/g,
+                        replacement: ''
+                    }]
+                },
+                files: [{
+                    expand: true,
+                    src: 'scripts/**/*.js'
+                }]
+            }
+        },
 
         concat: {
             options: {
@@ -56,9 +82,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-ng-annotate');
+    grunt.loadNpmTasks('grunt-string-replace');
 
     // default task(s).
     grunt.registerTask('default', ['less', 'concat', 'watch']);
-    grunt.registerTask('prod', ['less', 'concat', 'uglify']);
+    grunt.registerTask('prod', ['less', 'ngAnnotate','string-replace', 'concat', 'uglify']);
 
 };
