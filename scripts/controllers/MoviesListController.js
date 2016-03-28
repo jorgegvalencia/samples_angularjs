@@ -1,4 +1,4 @@
-angular.module("moviedb").controller("MoviesListController", ["$scope", "$log", "MovieService", "URL", "paths", function($scope, $log, MovieService, URL, paths) {
+angular.module("moviedb").controller("MoviesListController", ["$scope", "$log", "APIClient", "URL", "paths", function($scope, $log, APIClient, URL, paths) {
 
     // scope init
 
@@ -10,7 +10,7 @@ angular.module("moviedb").controller("MoviesListController", ["$scope", "$log", 
     }
 
     // Controller start
-    MovieService.getMovies()
+    APIClient.getMovies()
         .then(
             // promesa resuelta
             function(data) {
