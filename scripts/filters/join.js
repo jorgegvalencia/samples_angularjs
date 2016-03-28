@@ -1,0 +1,13 @@
+angular.module("moviedb").filter("join", ["$log", function($log) {
+    return function($log) {
+        var items = arr || null;
+        var separator = sep || ", ";
+        if (items == null)
+            return "";
+        if (typeof arr.join === "undefined") {
+            $log.error("The value passed to te filter 'join must be an array");
+            return "";
+        }
+        return arr.join();
+    }
+}])
