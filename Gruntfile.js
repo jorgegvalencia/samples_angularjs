@@ -9,7 +9,9 @@ module.exports = function(grunt) {
             app: {
                 files: [{
                     expand: true,
-                    src: ['scripts/**/*.js']
+                    cwd: 'scripts/',
+                    src: ['**/*.js'],
+                    dest: 'src/'
                 }]
             }
         },
@@ -24,7 +26,9 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: 'scripts/**/*.js'
+                    cwd: 'src/',
+                    src: '**/*.js',
+                    dest: 'src/'
                 }]
             }
         },
@@ -43,8 +47,8 @@ module.exports = function(grunt) {
                     'bower_components/angular/angular.js',
                     'bower_components/angular-route/angular-route.js',
                     'bower_components/angular-sanitize/angular-sanitize.js',
-                    'scripts/**/*.js',
-                    'scripts/*.js'
+                    'src/**/*.js',
+                    'src/*.js'
                 ],
                 dest: 'dist/app.js'
             }
@@ -88,7 +92,7 @@ module.exports = function(grunt) {
 
     // default task(s).
     grunt.registerTask('default', ['less', 'concat', 'watch']);
-    grunt.registerTask('prod', ['less', 'concat', 'uglify']);
-    //grunt.registerTask('prod', ['less', 'ngAnnotate','string-replace', 'concat', 'uglify']);
+    //grunt.registerTask('prod', ['less', 'concat', 'uglify']);
+    grunt.registerTask('prod', ['less', 'ngAnnotate','string-replace', 'concat', 'uglify']);
 
 };
