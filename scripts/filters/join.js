@@ -1,5 +1,5 @@
 angular.module("moviedb").filter("join", ["$log", function($log) {
-    return function($log) {
+    return function(arr, sep) {
         var items = arr || null;
         var separator = sep || ", ";
         if (items == null)
