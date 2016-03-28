@@ -42,6 +42,7 @@ module.exports = function(grunt) {
                     'bower_components/moment/moment.js',
                     'bower_components/angular/angular.js',
                     'bower_components/angular-route/angular-route.js',
+                    'bower_components/angular-sanitize/angular-sanitize.js',
                     'scripts/**/*.js',
                     'scripts/*.js'
                 ],
@@ -87,6 +88,7 @@ module.exports = function(grunt) {
 
     // default task(s).
     grunt.registerTask('default', ['less', 'concat', 'watch']);
-    grunt.registerTask('prod', ['less', 'ngAnnotate','string-replace', 'concat', 'uglify']);
+    grunt.registerTask('prod', ['less', 'concat', 'uglify']);
+    //grunt.registerTask('prod', ['less', 'ngAnnotate','string-replace', 'concat', 'uglify']);
 
 };

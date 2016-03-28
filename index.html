@@ -2,7 +2,9 @@
 <html ng-app="moviedb" ng-controller="AppController">
 
 <head>
-    <title>{{ model.title }}</title>
+    <title ng-bind-html="model.title">MovieDB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="dist/style.css">
 </head>
 
