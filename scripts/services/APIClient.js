@@ -38,4 +38,22 @@ angular.module("moviedb").service("APIClient", ["$http", "$q", "apiPaths", "URL"
         var url = URL.resolve(apiPaths.serieDetail, {id: serieId});
         return this.apiRequest(url);
     };
+
+    this.createMovie = function (movie) {
+        var deferred = $q.defer();
+        //Hacer trabajo asíncrono
+        $http.post(apiPaths.movies, movie).then(
+            function(response) {
+                //Resolvemos promesa
+                deferred.resolve(response.data);
+            },
+            function(response) {
+                //Rechazar promesa
+                //Esta gestión de error es bastante pobre, habría que mejorarla
+                deferred.reject(response.data);
+            }
+        );
+        //Devolver promesa      
+        return deferred.promise;
+    }
 }]);
